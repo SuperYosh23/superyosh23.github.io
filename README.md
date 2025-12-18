@@ -1,3 +1,2 @@
-# site
-This is my GitHub site, which as of right now just redirects to my actual website.
-I will likely move the files of my actual site over here sometime soon.
+# My GitHub landing page
+This has links to a bunch of my web projects and my main website.
