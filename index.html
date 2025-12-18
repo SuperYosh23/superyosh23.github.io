@@ -1,24 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Redirecting...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SuperYosh23's GitHub Landing</title>
+    <link rel="icon" type="image/png" href="YoshPFPLarge.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <style>
+        :root {
+            --background-start: #0f1f0f;
+            --background-end: #1a2a1a;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --text-color: #e0e0e0;
+            --accent-color: #32CD32;
+            --font-stack: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* General Styles */
         body {
-            background-color: black;
-            color: white;
+            margin: 0;
+            font-family: var(--font-stack);
+            color: var(--text-color);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: linear-gradient(120deg, var(--background-start), var(--background-end));
+            background-size: 400% 400%;
+            animation: gradientShift 15s infinite alternate ease-in-out;
+            
+            /* FLEXBOX CENTERING MAGIC */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0; /* Adds some breathing room on mobile */
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* Glassmorphism Panel Base */
+        .glass-panel {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            width: 90%; /* Responsive width */
+            max-width: 450px;
             text-align: center;
-            font-family: Arial, sans-serif;
-            margin-top: 20%;
+            transition: transform 0.3s ease;
         }
-        a {
-            color: cyan;
+
+        /* Profile Image */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(50, 205, 50, 0.4);
+            object-fit: cover; /* Ensures image fills circle perfectly */
         }
+
+        h1 {
+            font-size: 2em;
+            color: white;
+            margin: 10px 0 5px 0;
+        }
+        
+        p.subtitle {
+            color: #aaa;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+        }
+
+        /* Hub Link Buttons */
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hub-link {
+            display: flex;
+            flex-direction: column; /* Stacks text vertically */
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Text Styling inside Button */
+        .link-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 4px;
+        }
+        
+        .link-desc {
+            font-size: 0.85em;
+            font-weight: 300;
+            color: #ccc; /* Slightly dimmer text */
+            transition: color 0.3s;
+        }
+
+        .hub-link:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(50, 205, 50, 0.3);
+        }
+
+        /* Change text color on hover for contrast */
+        .hub-link:hover .link-title, 
+        .hub-link:hover .link-desc {
+            color: #0f1f0f;
+        }
+
+        /* Fade-In Animation */
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+
     </style>
-    <script>
-        window.location.href = "https://superyosh23.neocities.org/";
-    </script>
 </head>
 <body>
-    <p>If you are not redirected, <a href="https://superyosh23.neocities.org/">click here</a>.</p>
+
+    <main class="glass-panel hidden">
+        
+        <img src="https://static.planetminecraft.com/files/avatar/5469463_2.png" alt="SuperYosh23" class="profile-img" onerror="this.src='https://via.placeholder.com/150'">
+        
+        <h1>SuperYosh23</h1>
+        <p class="subtitle">It seems you've found my GitHub page!</p>
+
+        <div class="link-container">
+            
+            <a href="https://superyosh23.github.io/ZalgoTextGen/" class="hub-link">
+                <span class="link-title">Zalgo Text Generator</span>
+                <span class="link-desc">M̶̖̗͚̥̜̜ͫ̽̾̋̍a̞̮ͩͤͧͧ̏ͭk̯͉̟̪e͔̗̟̝̱ͣ͆ ͎̠̺͖̖͎̯͆ͥ̆yͪͭ̔́̓ỏ̴͚̲̯u͍̺͕̻̓ͭ̊ͣͣ̅̅́r̸̋̽ͥ̓ͩͫ̌ ̴̦̗̝͔ͭ́t͈̤̥͙͍̣ͧ̍ͫ͐̋̚͝e̗͑͌ͨ̄̂́x̡͚̳͎͐͊̏͆̔̾̚t̹͚̦͕ͤ͑͜ ̜͈̟͟l̨̞̰̠̩̥o̞͙͖̤͇ͪ̎̑õ̜̲̦̪̋ͩͥͣͯ͛͘k̴͎̼̹͂ ̺͍̣̝̥̱ͪ̆ͦ̚͜l̜̦̫̪̮͛̀͊ik̢͙̯̓e̮̓ͫ͗ ͬ͐ͦ͆̀ͯͨt̸̠̘̫͙̋̃ͯh̥̣͢i͔͍̝͈͙̣s̰̀̄͗͢</span>
+            </a>
+
+            <a href="https://superyosh23.github.io/VVVVVVSaveEditor/" class="hub-link">
+                <span class="link-title">VVVVVV Save Editor</span>
+                <span class="link-desc">A web tool for editing VVVVVV save files that barely works</span>
+            </a>
+
+            <a href="https://superyosh23.github.io/StreamingDashboard/" class="hub-link">
+                <span class="link-title">Streaming Dashboard</span>
+                <span class="link-desc">Meant for use on home theatre pcs. just take a look, it's hard to explain.</span>
+            </a>
+
+            <a href="https://superyosh23.github.io/DigitalFidget/" class="hub-link">
+                <span class="link-title">Digital Fidget</span>
+                <span class="link-desc">A ball that you can bounce around</span>
+            </a>
+            
+            <a href="https://superyosh23.neocities.org" class="hub-link">
+                <span class="link-title">Main Website</span>
+                <span class="link-desc">My personal website.</span>
+            </a>
+
+            <a href="https://superyosh23.github.io/That-Shooting-Game/" class="hub-link">
+                <span class="link-title">That Shooting Game</span>
+                <span class="link-desc">A small browser game project that i abandoned a while back.</span>
+            </a>
+            
+        </div>
+
+       
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.hidden').forEach(element => observer.observe(element));
+        });
+    </script>
+
 </body>
 </html>
